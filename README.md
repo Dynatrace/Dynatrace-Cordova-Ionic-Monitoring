@@ -3,18 +3,18 @@
 
 ![Screenshot](docs/screenshot.PNG?raw=true "Screenshot of the app")
 
-This project contains a demo application which is using the easyTravel API. The user is able to book journeys within the application. This is only a demo use case (Nothing will happen after booking a journey). The goal of this demo application is to show you how easy it is, to instrument a hybrid ionic application with Dynatrace and how easy it is to track the actions of the user within the application.
+The EasyTravel demo application is used to explain how Dynatrace real user monitoring within a typical Cordova Ionic 2 hybrid app works. EasyTravel implements a simple travel booking app that triggers real backend service calls. The user is able to book journeys within the application. This is only a demo use case (no worry, we do not charge for the journey you are booking). The goal of this demo application is to show you how easy it is, to instrument a hybrid ionic application with Dynatrace and how easy it is to track the actions of the user within the application.
 
 ## Getting Started
 
-This section describes how you can install and run this demo application on your own computer or mobile phone.
+This section describes how to install and run this demo application on your own computer or mobile phone.
 
 ### Prerequisites
 
-What software you need to install in order to start with installing the application itself:
+Following software packages are necessary to build and run the EasyTravel app:
 
 * Installation of NodeJS: https://nodejs.org/en/
-* Installation of the Ionic CLI through npm (Node Package Manager): Enter in the cmd or terminal "npm install -g ionic" 
+* Installation of Ionic CLI through npm (Node Package Manager): Enter in the cmd or terminal "npm install -g ionic" 
 
 ### Installation
 
@@ -28,7 +28,7 @@ Now you are ready for the installation of the application.
 
 ### Start
 
-Depending on the platforms added, the startup looks different. Basically *"ionic serve --lab"* will work all the time, because it does need a platform to be executed. If you want to run the application on iOS or Android simply enter *"ionic run android"* or *"ionic run ios"*. This of course only works when the platform was added in the installation step.
+Depending on the platforms added, the startup looks different. Basically *"ionic serve --lab"* will work out of the box, because it does not need a platform to be executed. If you want to run the application on iOS or Android simply enter *"ionic run android"* or *"ionic run ios"*. This of course only works when the platform was added in the installation step.
 
 ## Instrumentation
 
