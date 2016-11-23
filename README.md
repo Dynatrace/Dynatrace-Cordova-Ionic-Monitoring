@@ -1,5 +1,5 @@
-# Dynatrace Ionic 2 Demo Application
-> Ionic 2 Sample Instrumentation App 
+# Dynatrace Ionic 2 EasyTravel Demo Application
+> Ionic 2 Sample App 
 
 ![Screenshot](docs/screenshot.PNG?raw=true "Screenshot of the app")
 
