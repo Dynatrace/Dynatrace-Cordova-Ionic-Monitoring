@@ -1,0 +1,24 @@
+<ion-header>
+
+ <ion-navbar color="energized">
+		<button ion-button menuToggle color="light">
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>
+      {{pageName}}
+		</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list class="center" [style.display]="errorNoResult ? 'none':''">
+		<ion-list-header text-wrap align="center">
+			<img src="assets/icon/warning.png" width="40px">
+			<br><br>
+			I'm sorry, I could not find the page. Maybe the server is wrong?
+		</ion-list-header>
+	</ion-list>
+	<div #divPage class="frame" [style.display]="errorNoResult ? '':'none'"></div>
+</ion-content>

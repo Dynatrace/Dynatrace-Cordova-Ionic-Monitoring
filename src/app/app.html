@@ -1,0 +1,25 @@
+<ion-menu #menu [content]="content">
+
+	<ion-header>
+		<br>
+		<div class="img-circular"></div>
+		<br>
+		<ion-item text-center>
+			<h3>EasyTravel</h3>
+			<p>a Dynatrace Company</p>
+		</ion-item>
+	</ion-header>
+
+	<ion-content>
+		<ion-list>
+			<button ion-item menuClose *ngFor="let p of pages" (click)="openPage(p)">
+				<ion-icon name="{{p.icon}}" icon-left></ion-icon>
+				{{p.title}}
+			</button>
+		</ion-list>
+	</ion-content>
+
+
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

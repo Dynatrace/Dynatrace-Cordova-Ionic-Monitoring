@@ -1,0 +1,32 @@
+page-search {
+
+	::-webkit-scrollbar,
+	*::-webkit-scrollbar {
+	  display: none;
+	}
+	
+	.buttonBottom{
+		width: 90% !important;
+		margin: auto !important; 
+	}
+	
+	.listTopSpace{
+		margin-top: 10px !important;
+	}
+	
+	.list-ios{
+		margin-top: -20px;
+	}
+	
+	.list-wp{
+		margin-top: -20px;
+	}
+	
+	.footerBottom{
+		bottom: 10px !important;
+	}
+	
+	.footer-md::before{
+		display: none;
+	}
+}

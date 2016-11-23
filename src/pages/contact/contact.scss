@@ -1,0 +1,21 @@
+page-contact {
+
+	.img-circular{
+		 width: 100px;
+		 height: 100px;
+		 margin: auto;
+		 margin-top: 10px;
+		 background-image: url('../assets/images/dynatrace.jpg');
+		 background-size: cover;
+		 display: block;
+		 border-radius: 50px;
+		 -webkit-border-radius: 50px;
+		 -moz-border-radius: 50px;
+	}
+	
+	::-webkit-scrollbar,
+	*::-webkit-scrollbar {
+	  display: none;
+	}
+
+}

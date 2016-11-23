@@ -1,0 +1,61 @@
+<!--
+  Generated template for the Settings page.
+
+  See http://ionicframework.com/docs/v2/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+	<ion-navbar color="energized">
+		<button ion-button menuToggle color="light">
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>
+      Server Settings
+		</ion-title>
+	</ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+	<ion-list>
+		<ion-list-header>
+			Server
+		</ion-list-header>
+		<ion-item>
+			<ion-label color="energized">Host</ion-label>
+			<ion-input type="text" [(ngModel)]="hostUrl" (blur)="inputHostUrlChanged()"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label color="energized">Port</ion-label>
+			<ion-input type="number" [(ngModel)]="hostPort" (blur)="inputHostPortChanged()"></ion-input>
+		</ion-item>
+	</ion-list>
+	<br>
+	<ion-list>
+		<ion-list-header>
+			Debug
+		</ion-list-header>
+		<ion-item>
+			<ion-label>Crash On Login</ion-label>
+			<ion-toggle [(ngModel)]="crashLogin" (ionChange)="toggleCrashChanged()"></ion-toggle>
+		</ion-item>
+		<ion-item>
+			<ion-label>EasyTravel Unreachable</ion-label>
+			<ion-toggle [(ngModel)]="easyTravelUnreachable" (ionChange)="toggleUnreachableChanged()"></ion-toggle>
+		</ion-item>
+		<ion-item>
+			<ion-label>Booking Error</ion-label>
+			<ion-toggle [(ngModel)]="bookingError" (ionChange)="toggleBookingChanged()"></ion-toggle>
+		</ion-item>
+	</ion-list>
+
+</ion-content>
+
+<ion-footer class="footerBottom">
+  <button ion-button block icon-left class="buttonBottom" (click)="buttonClickedDefaultSettings()">
+		Default Settings
+	</button>
+</ion-footer>
