@@ -1,5 +1,6 @@
 # Dynatrace Ionic 2 Demo Application
 > Ionic 2 Sample Instrumentation App 
+
 This project contains a demo application which is using the easyTravel API. The user is able to book journeys within the application. This is only a demo use case (Nothing will happen after booking a journey). The goal of this demo application is to show you how easy it is, to instrument a hybrid ionic application with Dynatrace and how easy it is to track the actions of the user within the application.
 
 ## Getting Started
