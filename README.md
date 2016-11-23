@@ -16,14 +16,15 @@ What software you need to install in order to start with installing the applicat
 
 Now you are ready for the installation of the application.
 
-* Installation of Node Modules: In the project directory execute the following command - "npm install"
-* Adding for a platform (e.g. Android) - **Not necessary** : Enter the command "ionic platform add Android" 
+* Checkout or download the project content
+* Installation of all necessary project modules: In the project directory execute the following command - *"npm install"*
+* Adding a platform (e.g. Android) - **Not necessary** : Enter the command *"ionic platform add Android"*
 
-Especially when adding a platform be sure that you install all necessary platform tools. See https://ionicframework.com/docs/v2/getting-started/installation/ for more information. The Android platform requirements can be found here: http://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html. The iOS platform requirements can be found here: http://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html
+**Important:** Especially when adding a platform be sure that you install all necessary platform tools. See https://ionicframework.com/docs/v2/getting-started/installation/ for more information. The Android platform requirements can be found here: http://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html. The iOS platform requirements can be found here: http://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html
 
 ### Start
 
-Depending on the platforms you added the startup looks different. Basically "ionic serve --lab" will work all the time, because it does need a platform to be added. If you want to run the application on iOS or Android simply enter "ionic run android" or "ionic run ios". This of course only works when the platform was added in the installation step.
+Depending on the platforms added, the startup looks different. Basically *"ionic serve --lab"* will work all the time, because it does need a platform to be executed. If you want to run the application on iOS or Android simply enter *"ionic run android"* or *"ionic run ios"*. This of course only works when the platform was added in the installation step.
 
 ## Instrumentation
 
