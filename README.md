@@ -30,9 +30,44 @@ Now you are ready for the installation of the application.
 
 Depending on the platforms added, the startup looks different. Basically *"ionic serve --lab"* will work out of the box, because it does not need a platform to be executed. If you want to run the application on iOS or Android simply enter *"ionic run android"* or *"ionic run ios"*. This of course only works when the platform was added in the installation step.
 
+**Hint** : If you want to start the application in your browser locally hardly any browser will allow CORS requests. To bypass this symptom you have to install an extension or workaround for your browser. This [extension](https://chrome.google.com/webstore/detail/cors/dboaklophljenpcjkbbibpkbpbobnbld?utm_source=chrome-app-launcher-info-dialog) in Chrome was tested successfully. You have to turn on the extension after installing it. This workaround is not needed for testing on the phone.
+
 ## Instrumentation
 
-The instrumention will be explained in this section. Stay tuned.
+The instrumention is fast and easy. Make sure that you started the application at least one time (as described above) to be sure that the application is working on your computer. Following steps will automatically instrument the Ionic application:
+
+* Execute the command *npm install WILL-BE-ADDED-SOON* in your project folder.
+* The *instrument.properties* will now appear in your root project folder. Fill in the properties for your environment.
+
+The property file (instrument.properties) looks like this:
+
+```
+## Instrumentation Properties - Please define in order to download the JS Agent ##
+SOURCE_DIRECTORY = "src"
+
+# General Settings - 'DYNATRACE SAAS' 'DYNATRACE MANAGED' OR 'DYNATRACE APPMON'
+TYPE = "DYNATRACE SAAS"
+
+# (ONLINE / Include agent or OFFLINE / Download agent on the fly)
+AGENT_LOCATION = "OFFLINE"
+
+# DYNATRACE SaaS/Managed API Access 
+ENVIRONMENT_ID = "fdq95078" 
+CLUSTER_URL = "fdq95078.dev.dynatracelabs.com"
+APPLICATION_ID = "203B8CC2009EE62F"
+API_TOKEN = "H0yp6L_QSFyi3iaphSBJX"
+
+# APPMON API Access
+APPMON_URL = ""
+APPLICATION_NAME = "easyTravel portal"
+PROFILE = "easyTravel"
+API_USER = "admin"
+API_PASSWORD = "admin"
+```
+
+This is the download and default version of the properties. The source directory at the beginning is the source directoy of your Ionic project. For most Ionic 2 projects this directory is called *"src"*. In Ionic 1 this directory can also be called *"www"*. Dynatrace Saas is configured as default type. Other type options might be Dynatrace Managed or Dynatrace AppMon. Additionally you can choose, wether you want to download the whole agent (OFFLINE) and include the agent in the build or if you want to add only a tag (ONLINE) in the HTML which is downloading the agent on the fly (when the application is starting). Beneath those options you can find the API configuration for Dynatrace Saas/Managed and Dynatrace AppMon. Depending on which type you use, make sure that you fill in the configuration. 
+
+You are done! After those two simple and short steps your project will be instrumented automatically by our scripts when you build the application. Be aware that the used agent is only functional when you make a native build (Android, iOS). The command *ionic serve --lab* will therefore sadly not work. If you use *ionic serve --lab* the application would still be instrumented and will start as usual, but the agent can not communicate with the server (Because of CORS, as described above). 
 
 ## Credits
 
