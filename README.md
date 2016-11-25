@@ -34,10 +34,11 @@ Depending on the platforms added, the startup looks different. Basically *"ionic
 
 ## Instrumentation
 
-The instrumention is fast and easy. Make sure that you started the application at least one time (as described above) to be sure that the application is working on your computer. Following steps will automatically instrument the Ionic application:
+The instrumention is fast and easy and supports both Ionic 1 and Ionic 2. Make sure that you started the application at least one time (as described above), to be sure that the application is working on your computer. Following steps will automatically instrument the Ionic application:
 
 * Execute the command *npm install WILL-BE-ADDED-SOON* in your project folder.
-* The *instrument.properties* will now appear in your root project folder. Fill in the properties for your environment.
+* The *instrument.properties* file will now appear in your root project folder after the installation of the instrumentation tool has finished. 
+* Fill in the configuration in the *instrument.properties* with the information of your own dynatrace environment.
 
 The property file (instrument.properties) looks like this:
 
@@ -65,9 +66,14 @@ API_USER = "admin"
 API_PASSWORD = "admin"
 ```
 
-This is the download and default version of the properties. The source directory at the beginning is the source directoy of your Ionic project. For most Ionic 2 projects this directory is called *"src"*. In Ionic 1 this directory can also be called *"www"*. Dynatrace Saas is configured as default type. Other type options might be Dynatrace Managed or Dynatrace AppMon. Additionally you can choose, wether you want to download the whole agent (OFFLINE) and include the agent in the build or if you want to add only a tag (ONLINE) in the HTML which is downloading the agent on the fly (when the application is starting). Beneath those options you can find the API configuration for Dynatrace Saas/Managed and Dynatrace AppMon. Depending on which type you use, make sure that you fill in the configuration. 
+This is the download and default version of the properties. Following points have to be configured:
 
-You are done! After those two simple and short steps your project will be instrumented automatically by our scripts when you build the application. Be aware that the used agent is only functional when you make a native build (Android, iOS). The command *ionic serve --lab* will therefore sadly not work. If you use *ionic serve --lab* the application would still be instrumented and will start as usual, but the agent can not communicate with the server (Because of CORS, as described above). 
+* SOURCE_DIRECTORY: The source directory at the beginning is the source directoy of your Ionic project. For most Ionic 2 projects this directory is called *"src"*. In Ionic 1 this directory can also be called *"www"*. 
+* TYPE: Dynatrace Saas is configured as default type. Other type options might be Dynatrace Managed or Dynatrace AppMon. 
+* AGENT_LOCATION: You can choose wether you want to download the whole agent (OFFLINE) and include the agent in the build or if you want to add only a tag (ONLINE) in the HTML which is downloading the agent on the fly (when the application is starting). 
+* Other: Beneath the other options you can find the API configuration for Dynatrace Saas/Managed and Dynatrace AppMon. Depending on which TYPE you use, make sure that you fill in the configuration. 
+
+You are done! After those two simple and short steps your project will be instrumented automatically by our scripts when you build the application. Be aware that the used agent is only working when you make a native build (Android, iOS) [e.g. *ionic build android*]. The command *ionic serve --lab* will therefore sadly not work. If you use *ionic serve --lab* the application would still be instrumented and will start as usual, but the agent can not communicate with the server (Because of CORS, as described above). 
 
 ## Credits
 
