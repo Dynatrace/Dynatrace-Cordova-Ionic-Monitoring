@@ -36,7 +36,7 @@ Depending on the platforms added, the startup looks different. Basically *"ionic
 
 The instrumention is fast and easy and supports both Ionic 1 and Ionic 2. Make sure that you started the application at least one time (as described above), to be sure that the application is working on your computer. Following steps will automatically instrument the Ionic application:
 
-* Execute the command *npm install WILL-BE-ADDED-SOON* in your project folder.
+* Execute the command *npm install dynatrace-ionic-instrumentation* in your project folder.
 * The *instrument.properties* file will now appear in your root project folder after the installation of the instrumentation tool has finished. 
 * Fill in the configuration in the *instrument.properties* with the information of your own dynatrace environment.
 
