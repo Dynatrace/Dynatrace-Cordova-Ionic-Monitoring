@@ -1,9 +1,8 @@
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { AlertController } from 'ionic-angular';
 import { RESTConfiguration } from '../interfaces/restConfiguration';
 import { Parameter } from '../interfaces/parameter';
-import { Observable } from "rxjs/Rx";
 import { Config } from '../services/config';
 
 import 'rxjs/Rx';

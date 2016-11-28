@@ -1,6 +1,6 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+import { DomSanitizer } from '@angular/platform-browser';
 import { LoadingDialogService } from '../../services/loadingDialogService';
 import { RESTService } from '../../services/restService';
 import { Config } from '../../services/config';
