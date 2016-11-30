@@ -32,6 +32,14 @@
 			<ion-label color="energized">Port</ion-label>
 			<ion-input type="number" [(ngModel)]="hostPort" (blur)="inputHostPortChanged()"></ion-input>
 		</ion-item>
+    <ion-item>
+      <ion-label color="energized">Proxy Host</ion-label>
+      <ion-input type="text" [(ngModel)]="proxyUrl" (blur)="inputProxyUrlChanged()"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="energized">Proxy Port</ion-label>
+      <ion-input type="number" [(ngModel)]="proxyPort" (blur)="inputProxyPortChanged()"></ion-input>
+    </ion-item>
 	</ion-list>
 	<br>
 	<ion-list>
