@@ -17,26 +17,24 @@ Ionic pages and navigation.
 
 </ion-header>
 
+<ion-content>
+  <ion-list class="list-top-space">
+    <ion-list-header>
+      <div class="img-circular"></div>
+      <h2>User Account Details</h2>
+    </ion-list-header>
+    <ion-item>
+      <ion-input [disabled]="inputDisabled ? '' : null" type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
+    </ion-item>
 
-<ion-content padding>
-
-	<div class="img-circular"></div>
-	<br>
-	<ion-item text-center>
-		<h3>User Account Details</h3>
-	</ion-item>
-	<br>
-	<ion-item>
-			<ion-input [disabled]="inputDisabled ? '' : null" type="text" placeholder="Username" [(ngModel)]="username"></ion-input>
-	</ion-item>
-		
-	<ion-item>
-			<ion-input [disabled]="inputDisabled ? '' : null" type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
-	</ion-item>
-	<br>
-	<button ion-button block icon-left (click)="buttonUserClicked()">
-		{{buttonText}}
-	</button>
-
+    <ion-item>
+      <ion-input [disabled]="inputDisabled ? '' : null" type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </ion-list>
 </ion-content>
-	
+
+<ion-footer class="footer-bottom">
+  <button ion-button block icon-left class="button-bottom" (click)="buttonUserClicked()">
+    {{buttonText}}
+  </button>
+</ion-footer>
