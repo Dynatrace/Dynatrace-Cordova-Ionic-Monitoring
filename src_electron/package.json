@@ -1,0 +1,9 @@
+{
+  "name": "easyTravelClient",
+  "author": "Dynatrace",
+  "version": "0.1.0",
+  "main": "main.js",
+  "dependencies": {
+    "x2js": "^3.0.1"
+  }
+}
