@@ -1,5 +1,5 @@
 # Dynatrace Ionic 2 EasyTravel Demo Application
-> Ionic 2 Sample App 
+> Ionic 2 + Electron Sample Apps
 
 ![Screenshot](docs/screenshot.PNG?raw=true "Screenshot of the app")
 
@@ -11,33 +11,52 @@ This section describes how to install and run this demo application on your own 
 
 ### Prerequisites
 
-Following software packages are necessary to build and run the EasyTravel app:
+The following software packages are necessary to build and run the EasyTravel app.
 
-* Installation of NodeJS: https://nodejs.org/en/
-* Installation of Ionic CLI through npm (Node Package Manager): Enter in the cmd or terminal "npm install -g ionic" 
+1. Installation of NodeJS: https://nodejs.org/en/
+2. Installation of required global node modules with the following command: `npm install -g ionic corsproxy grunt-cli`
 
 ### Installation
 
 Now you are ready for the installation of the application.
 
-* Checkout or download the project content
-* Installation of all necessary project modules: In the project directory execute the following command - *"npm install"*
-* Adding a platform (e.g. Android) - **Not necessary** : Enter the command *"ionic platform add Android"*
+1. Checkout or download the project content
+2. Installation of all necessary project modules: In the project directory execute the command `npm install`
+3. Add a desktop platform: Enter the command `ionic platform add browser`
+4. **Not necessary**: Add a mobile platform (e.g. Android) - Enter the command `ionic platform add Android`
 
 **Important:** Especially when adding a platform be sure that you install all necessary platform tools. See https://ionicframework.com/docs/v2/getting-started/installation/ for more information. The Android platform requirements can be found here: http://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html. The iOS platform requirements can be found here: http://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html
 
 ### Start
 
-Depending on the platforms added, the startup looks different. Basically *"ionic serve --lab"* will work out of the box, because it does not need a platform to be executed. If you want to run the application on iOS or Android simply enter *"ionic run android"* or *"ionic run ios"*. This of course only works when the platform was added in the installation step.
+Depending on the platforms added, the startup looks different. Basically `grunt serve-lab` & `grunt serve-web` will work out of the box, because they do not need a platform to be executed. (If you want to run `ionic serve --lab` instead, please read the section *CORS Problems*.)
 
-**Hint** : If you want to start the application in your browser locally hardly any browser will allow CORS requests. To bypass this symptom you have to install an extension or workaround for your browser. This [extension](https://chrome.google.com/webstore/detail/cors/dboaklophljenpcjkbbibpkbpbobnbld?utm_source=chrome-app-launcher-info-dialog) in Chrome was tested successfully. You have to turn on the extension after installing it. This workaround is not needed for testing on the phone.
+If you want to run the application on iOS or Android simply enter `ionic run android` or `ionic run ios`. This, of course, only works when the platform was added in the installation step.
+
+Run `grunt serve-app` to start the Electron demo app.
+
+### Build
+
+To build the iOS & Android apps, execute `ionic build ios` or `ionic build android`, respectively. Again, this only works when the platform was added in the installation step.
+
+To build a simple web app, just run `grunt build-web`.
+
+To create an Electron app package, run `grunt build-app`.
+
+### CORS Problems
+
+If you want to start the application in your browser locally hardly any browser will allow CORS requests. To bypass this symptom you can install an extension for your browser. This [Chrome extension](https://chrome.google.com/webstore/detail/cors/dboaklophljenpcjkbbibpkbpbobnbld?utm_source=chrome-app-launcher-info-dialog) is known to work. You have to turn on the extension after installing it. This workaround is not needed for testing on the phone.
+
+It's cleaner, however, to use a CORS proxy. To start the proxy manually, execute `corsproxy` in a command line. **The Grunt "serve" tasks automatically start it in the background.**
+
+Now you can navigate to the *Settings* page and enter "localhost" in the *Proxy Host* field, as well as the port number used by the CORS proxy (displayed in the command line window) in the *Proxy Port* field.
 
 ## Instrumentation
 
 The instrumention is fast and easy and supports both Ionic 1 and Ionic 2. Make sure that you started the application at least one time (as described above), to be sure that the application is working on your computer. Following steps will automatically instrument the Ionic application:
 
 * Execute the command *npm install dynatrace-ionic-instrumentation* in your project folder.
-* The *instrument.properties* file will now appear in your root project folder after the installation of the instrumentation tool has finished. 
+* The *instrument.properties* file will now appear in your root project folder after the installation of the instrumentation tool has finished.
 * Fill in the configuration in the *instrument.properties* with the information of your own dynatrace environment.
 
 The property file (instrument.properties) looks like this:

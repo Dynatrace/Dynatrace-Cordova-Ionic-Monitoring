@@ -1,67 +1,68 @@
 <!--
-  Generated template for the Special page.
+Generated template for the Special page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
+See http://ionicframework.com/docs/v2/components/#navigation for more info on
+Ionic pages and navigation.
 -->
 <ion-header>
 
   <ion-navbar color="energized">
-		<button ion-button menuToggle color="light">
-			<ion-icon name="menu"></ion-icon>
-		</button>
-		<ion-title>
+    <button ion-button menuToggle color="light">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
       Special Offers
-		</ion-title>
-	</ion-navbar>
+    </ion-title>
+  </ion-navbar>
 </ion-header>
 
-
 <ion-content #content padding>
-	<ion-list [style.display]="errorNoResult ? '':'none'">
-		<ion-list-header text-wrap align="center">
-			<img src="assets/icon/warning.png" width="40px">
-			<br><br>
-			Error occured! There is something wrong with the server. Check your settings.
-		</ion-list-header>
-	</ion-list>
-	<ion-card *ngFor="let journey of arrayOffers">
-		<img src="assets/images/sample.jpg">
-		
-		<ion-item>
-			<ion-icon name="ios-home-outline" item-left large></ion-icon>
-			<h2>Destination</h2>
-			<p>{{journey.destination}}</p>
-		</ion-item>
-		
-		<ion-item>
-			<ion-icon name="ios-calendar-outline" item-left large></ion-icon>
-			<h2>Date</h2>
-			<p>{{journey.fromDate}} to {{journey.toDate}}</p>
-		</ion-item>
-		
-		<ion-item>
-			<ion-icon name="ios-pricetags-outline" item-left large></ion-icon>
-			<h2>Price</h2>
-			<p>{{journey.price | currency:'EUR'}}</p>
-		</ion-item>
-		
-		<ion-item text-wrap>
-			<ion-icon name="ios-chatbubbles-outline" item-left large></ion-icon>
-			<h2>Description</h2>
-			<p>If you wish to stay in a hotel that has friendly staff and an inviting ambience that reminds you of home, then head to the Grand Hotel.</p>
-		</ion-item>
-		
-		<ion-item>
-			<button ion-button clear icon-right item-right (click)="bookButtonClicked(journey)">
-				BOOK
-				<ion-icon name="arrow-forward"></ion-icon>
-			</button>
-	    </ion-item>
-	</ion-card>
-	
-	<button ion-button block icon-left (click)="buttonClickedNewOffers()">
-		<ion-icon name="search"></ion-icon>
-		Next Special Offers
-	</button>
+  <ion-list [style.display]="errorNoResult ? '':'none'">
+    <ion-list-header text-wrap align="center">
+      <img src="assets/icon/warning.png" width="40px">
+      <br><br>
+      Error occured! There is something wrong with the server. Check your settings.
+    </ion-list-header>
+  </ion-list>
+  <ion-card *ngFor="let journey of arrayOffers">
+    <img src="assets/images/sample.jpg">
+
+    <div class="item-info">
+      <ion-item>
+        <ion-icon name="ios-home-outline" item-left large></ion-icon>
+        <h2>Destination</h2>
+        <p>{{journey.destination}}</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="ios-calendar-outline" item-left large></ion-icon>
+        <h2>Date</h2>
+        <p>{{journey.fromDate}} to {{journey.toDate}}</p>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="ios-pricetags-outline" item-left large></ion-icon>
+        <h2>Price</h2>
+        <p>{{journey.price | currency:'EUR'}}</p>
+      </ion-item>
+
+      <ion-item text-wrap>
+        <ion-icon name="ios-chatbubbles-outline" item-left large></ion-icon>
+        <h2>Description</h2>
+        <p>If you wish to stay in a hotel that has friendly staff and an inviting ambience that reminds you of home, then head to the Grand Hotel.</p>
+      </ion-item>
+
+      <ion-item>
+        <button ion-button clear icon-right item-right (click)="bookButtonClicked(journey)">
+          BOOK
+          <ion-icon name="arrow-forward"></ion-icon>
+        </button>
+      </ion-item>
+    </div>
+  </ion-card>
+
+  <button ion-button block icon-left (click)="buttonClickedNewOffers()">
+    <ion-icon name="search"></ion-icon>
+    Next Special Offers
+  </button>
 </ion-content>

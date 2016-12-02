@@ -1,0 +1,34 @@
+{
+  "serve-app": [
+    "shell:build",
+    "copy:electron",
+    "shell:proxy",
+    "shell:run",
+    "shell:proxy:kill"
+  ],
+  "serve-lab": [
+    "shell:proxy",
+    "shell:lab",
+    "shell:proxy:kill"
+  ],
+  "serve-web": [
+    "shell:build",
+    "copy:web",
+    "shell:proxy",
+    "connect",
+    "shell:proxy:kill"
+  ],
+  "build-app": [
+    "shell:build",
+    "copy:electron",
+    "shell:install",
+    "shell:package"
+  ],
+  "build-web": [
+    "shell:buildBrowser",
+    "copy:browser"
+  ],
+  "default": [
+    "serve-web"
+  ]
+}

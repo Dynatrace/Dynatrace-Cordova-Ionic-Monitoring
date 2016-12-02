@@ -33,6 +33,16 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "^0.0.36",
+    "@types/node": "^6.0.51",
+    "@types/x2js": "0.0.27",
+    "dynatrace-ionic-instrumentation": "0.0.2",
+    "electron": "^1.4.10",
+    "electron-packager": "^8.3.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-shell-spawn": "^0.3.10",
+    "load-grunt-config": "^0.19.2",
     "typescript": "^2.0.3"
   },
   "description": "EasyTravel: A dynatrace sample ionic project",

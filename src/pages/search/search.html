@@ -1,72 +1,72 @@
 <ion-header>
   <ion-navbar color="energized">
-	<button ion-button menuToggle color="light">
+    <button ion-button menuToggle color="light">
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
       EasyTravel
     </ion-title>
   </ion-navbar>
-  
-  <ion-list class="listTopSpace">
-	<ion-list-header>
-		<ion-avatar item-left>
-			<img src="assets/icon/world.png">
-		</ion-avatar>
-		<ion-input #destinationInput (keyup)="journeyInputChanged($event)" type="text" placeholder="Enter your destination ..">
-		</ion-input>
-	</ion-list-header>
-	
-	<ion-item>
-		<ion-avatar item-left>
-			<img src="assets/icon/departure.png">
-		</ion-avatar>
-		<h2>From Date</h2>
-		<p>When you leave.</p>
-		<button ion-button outline item-right (click)="fromDateButtonClicked()">
-			{{fromDate | amDateFormat:'DD. MMMM YYYY'}}
-		</button>
-	</ion-item>
-	
-	<ion-item>
-		<ion-avatar item-left>
-			<img src="assets/icon/arrival.png">
-		</ion-avatar>
-		<h2>To Date</h2>
-		<p>When you come back.</p>
-		<button ion-button outline item-right (click)="toDateButtonClicked()">
-			{{toDate | amDateFormat:'DD. MMMM YYYY'}}
-		</button>
-	</ion-item>
-	
-	<ion-item no-lines hidden="true">
-		<ion-datetime #dateFromPicker text-center (ionChange)="fromDateChanged($event)" displayFormat="DD. MMMM YYYY" [(ngModel)]="fromDate"></ion-datetime>
-	</ion-item>
-	<ion-item no-lines hidden="true">
-		<ion-datetime #dateToPicker text-center (ionChange)="toDateChanged($event)" displayFormat="DD. MMMM YYYY" [(ngModel)]="toDate"></ion-datetime>
-	</ion-item>
+
+  <ion-list class="list-top-space">
+    <ion-list-header>
+      <ion-avatar item-left>
+        <img src="assets/icon/world.png">
+      </ion-avatar>
+      <ion-input #destinationInput (keyup)="journeyInputChanged($event)" type="text" placeholder="Enter your destination ..">
+      </ion-input>
+    </ion-list-header>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="assets/icon/departure.png">
+      </ion-avatar>
+      <h2>From Date</h2>
+      <p>When you leave.</p>
+      <button ion-button outline item-right (click)="fromDateButtonClicked()">
+        {{fromDate | amDateFormat:'DD. MMMM YYYY'}}
+      </button>
+    </ion-item>
+
+    <ion-item>
+      <ion-avatar item-left>
+        <img src="assets/icon/arrival.png">
+      </ion-avatar>
+      <h2>To Date</h2>
+      <p>When you come back.</p>
+      <button ion-button outline item-right (click)="toDateButtonClicked()">
+        {{toDate | amDateFormat:'DD. MMMM YYYY'}}
+      </button>
+    </ion-item>
+
+    <ion-item no-lines hidden="true">
+      <ion-datetime #dateFromPicker text-center (ionChange)="fromDateChanged($event)" displayFormat="DD. MMMM YYYY" [(ngModel)]="fromDate"></ion-datetime>
+    </ion-item>
+    <ion-item no-lines hidden="true">
+      <ion-datetime #dateToPicker text-center (ionChange)="toDateChanged($event)" displayFormat="DD. MMMM YYYY" [(ngModel)]="toDate"></ion-datetime>
+    </ion-item>
   </ion-list>
 </ion-header>
 
 <ion-content padding [style.marginTop]="120">
   <ion-list>
-	<ion-list-header [style.display]="noSearchResults ? 'none':''" text-wrap align="center">
-		<img src="{{infoIcon}}" width="40px">
-		<br><br>
-		{{infoText}}
-	</ion-list-header>
-	
-	<ion-list-header [style.display]="noSearchResults ? '':'none'">
-		Search results
-	</ion-list-header>
+    <ion-list-header [style.display]="noSearchResults ? 'none':''" text-wrap align="center">
+      <img src="{{infoIcon}}" width="40px">
+      <br><br>
+      {{infoText}}
+    </ion-list-header>
 
-	<button ion-item *ngFor="let destination of destinations" detail-none (click)="destinationSelected(destination)">{{destination}}</button>
+    <ion-list-header [style.display]="noSearchResults ? '':'none'">
+      Search results
+    </ion-list-header>
+
+    <button ion-item *ngFor="let destination of destinations" detail-none (click)="destinationSelected(destination)">{{destination}}</button>
   </ion-list>
 </ion-content>
 
-<ion-footer class="footerBottom">
-  <button ion-button block icon-left class="buttonBottom" (click)="searchJourneyClicked()">
-	<ion-icon name="search"></ion-icon>
-	Search Journey
+<ion-footer class="footer-bottom">
+  <button ion-button block icon-left class="button-bottom" (click)="searchJourneyClicked()">
+    <ion-icon name="search"></ion-icon>
+    Search Journey
   </button>
 </ion-footer>

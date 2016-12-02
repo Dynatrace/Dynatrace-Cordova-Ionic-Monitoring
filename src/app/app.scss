@@ -1,6 +1,5 @@
 // http://ionicframework.com/docs/v2/theming/
 
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -15,24 +14,112 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-	.img-circular{
-	 width: 100px;
-	 height: 100px;
-	 margin: auto;
-	 margin-top: 10px;
-	 background-image: url('../assets/images/dynatrace.jpg');
-	 background-size: cover;
-	 display: block;
-	 border-radius: 50px;
-	 -webkit-border-radius: 50px;
-	 -moz-border-radius: 50px;
-	}
+.img-circular {
+  background-image: url('../assets/images/dynatrace.jpg');
+  background-size: cover;
+  width: 100px;
+  height: 100px;
+  margin: auto;
+  margin-top: 10px;
+  display: block;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+}
 
-	.header-menu{
-		background-color: #ffc900;
-	}
+.header-menu {
+  background-color: map-get($colors, primary);
+}
 
-	.image{
-		margin: auto;
-	}
-	
+.button-bottom{
+  width: 90% !important;
+  margin: auto !important;
+}
+
+.list-top-space{
+  margin-top: 10px !important;
+}
+
+.item-block h1,
+.item-block h2,
+.item-block h3,
+.item-block h4 {
+  width: 100%;
+}
+
+.image {
+  margin: auto;
+}
+
+.ionic-app .ion-page {
+  ::-webkit-scrollbar,
+  *::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+// Tablets & desktop browsers
+@media screen and (min-width: $tablet-screen-width) {
+  .menu-content {
+    -webkit-transform: translate3d($menu-width, 0, 0) !important;
+    -moz-transform: translate3d($menu-width, 0, 0) !important;
+    width: calc(100% - #{$menu-width}) !important;
+    transform: translate3d($menu-width, 0, 0) !important;
+  }
+
+  .buttons.left-buttons .icon.ion-navicon {
+    display: none;
+  }
+
+  ion-menu {
+    display: block !important;
+    width: $menu-width;
+
+    .menu-inner {
+      transform: translateX(0) !important;
+
+      .scroll-content {
+        margin-top: $logo-height;
+      }
+    }
+  }
+
+  ion-navbar {
+    .bar-button-menutoggle {
+      display: none;
+    }
+  }
+
+  ion-header .item-md.item-block .item-inner {
+    border-style: none;
+  }
+}
+
+// Desktop browsers
+@media screen and (min-width: $desktop-screen-width) {
+  ion-card {
+    img {
+      float: left;
+      width: 40%;
+    }
+
+    .item-info {
+      margin-left: 42%;
+      width: 58%;
+    }
+  }
+
+  .ion-page ion-list {
+    width: 50%;
+    position: relative;
+    margin: 0 auto;
+  }
+
+  .footer-bottom {
+    bottom: 10px !important;
+    left: 50%;
+    margin: 0 auto;
+    transform: translate3d(-50%, 0, 0);
+    width: 30%;
+  }
+}

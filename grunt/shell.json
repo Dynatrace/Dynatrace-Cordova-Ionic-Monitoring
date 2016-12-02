@@ -1,0 +1,31 @@
+{
+  "proxy": {
+    "command": "corsproxy",
+    "options": {
+      "async": true
+    }
+  },
+  "lab": {
+    "command": "ionic serve --lab"
+  },
+  "build": {
+    "command": "ionic build"
+  },
+  "buildBrowser": {
+    "command": "ionic build browser"
+  },
+  "run": {
+    "command": "<%= bin %>electron \"<%= appDist %>\""
+  },
+  "install": {
+    "command": "npm install",
+    "options": {
+      "execOptions": {
+        "cwd": "<%= appDist %>"
+      }
+    }
+  },
+  "package": {
+    "command": "<%= bin %>electron-packager \"<%= appDist %>\" --out=\"<%= dist %>\" --overwrite"
+  }
+}

@@ -19,11 +19,11 @@ const DEFAULT_INFO_ERROR_TEXT = "Error occured! There is something wrong with th
 
 export class SearchPage {
 	@ViewChild(Content) content: Content;
-	
+
 	// For Non-Native
 	@ViewChild('dateFromPicker') dateFromPicker;
 	@ViewChild('dateToPicker') dateToPicker;
-	
+
 	@ViewChild('destinationInput') destinationInput;
 
 	destinations : string[];
@@ -44,7 +44,7 @@ export class SearchPage {
 
 	constructor(private restService: RESTService, private dialog: LoadingDialogService, private alertCtrl: AlertController, private navCtrl: NavController, private platform: Platform){
 		this.config = Config.getInstance();
-		
+
 		this.fromDateRaw = new Date();
 		this.fromDate = this.fromDateRaw.toISOString();
 		this.toDateRaw = new Date();
@@ -73,7 +73,7 @@ export class SearchPage {
 				{name: "maxResultSize", value: "10"},
 				{name: "checkForJourneys", value: "true"}
 			]
-		}  
+		}
 
 		this.restService.getDestinations(config).subscribe((data: any) => this.callbackDestinationSearch(data), error => this.errorJourneyInput(error));
 	}
@@ -83,13 +83,13 @@ export class SearchPage {
 		this.destinations = data;
 		this.infoIcon = DEFAULT_INFO_NO_RESULT_ICON;
 		this.infoText = DEFAULT_INFO_NO_RESULT_TEXT;
-		this.noSearchResults = this.destinations.length > 0 ? true : false;
+		this.noSearchResults = this.destinations.length > 0;
 	}
 
 	// New destinations get loaded from rest call
 	private callbackJourneySearch(data: any){
 		this.dialog.dismissLoadingDialog();
-		
+
 		if(data == null){
 			// No search results
 			this.alertError("No Journey found!", "Sadly no journeys were found, which match with your date.");
@@ -114,7 +114,7 @@ export class SearchPage {
 	}
 
 	// Button pressed to search a Journey
-	searchJourneyClicked(){	
+	searchJourneyClicked(){
 		if(this.config.getEasyTravelUnreachable()){
 			this.restService.showErrorConnection();
 			throw "EasyTravel Unreachable!";
@@ -148,7 +148,7 @@ export class SearchPage {
 		this.destinationInput.value = item;
 	}
 
-	// Hidden date picker 
+	// Hidden date picker
 	fromDateChanged(dateEvent){
 		this.fromDateButtonText = dateEvent.day.text + ". " + dateEvent.month.text + " " + dateEvent.year.text;
 	}
@@ -173,7 +173,7 @@ export class SearchPage {
 	    }
 	}
 
-	// Hidden date picker 
+	// Hidden date picker
 	toDateChanged(dateEvent){
 		this.toDateButtonText = dateEvent.day.text + ". " + dateEvent.month.text + " " + dateEvent.year.text;
 	}
