@@ -4,6 +4,7 @@ import { AlertController } from 'ionic-angular';
 import { RESTConfiguration } from '../interfaces/restConfiguration';
 import { Parameter } from '../interfaces/parameter';
 import { Config } from '../services/config';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 
 declare var module: any, require: any;
