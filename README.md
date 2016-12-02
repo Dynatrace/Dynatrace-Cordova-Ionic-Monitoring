@@ -22,6 +22,7 @@ Now you are ready for the installation of the application.
 
 1. Checkout or download the project content
 2. Installation of all necessary project modules: In the project directory execute the command `npm install`
+3. Build the project for the first time. Use the command *ionic build*. This has to be done because of an Ionic Bug. If you want to add a platform without building the application at least once, the process will fail with the message *"Error: Current working directory is not a Cordova-based project."*.
 3. Add a desktop platform: Enter the command `ionic platform add browser`
 4. **Not necessary**: Add a mobile platform (e.g. Android) - Enter the command `ionic platform add Android`
 
@@ -45,7 +46,7 @@ To create an Electron app package, run `grunt build-app`.
 
 ### CORS Problems
 
-If you want to start the application in your browser locally hardly any browser will allow CORS requests. To bypass this symptom you can install an extension for your browser. This [Chrome extension](https://chrome.google.com/webstore/detail/cors/dboaklophljenpcjkbbibpkbpbobnbld?utm_source=chrome-app-launcher-info-dialog) is known to work. You have to turn on the extension after installing it. This workaround is not needed for testing on the phone.
+If you want to start the application in your browser locally hardly any browser will allow CORS requests. To bypass this symptom you can install an extension for your browser. This [Chrome extension](https://chrome.google.com/webstore/detail/cors/dboaklophljenpcjkbbibpkbpbobnbld?utm_source=chrome-app-launcher-info-dialog) is known to work. You have to turn on the extension after installing it. This workaround is not needed when you execute the electron executabel or the application on the phone.
 
 It's cleaner, however, to use a CORS proxy. To start the proxy manually, execute `corsproxy` in a command line. **The Grunt "serve" tasks automatically start it in the background.**
 
@@ -53,7 +54,7 @@ Now you can navigate to the *Settings* page and enter "localhost" in the *Proxy 
 
 ## Instrumentation
 
-The instrumention is fast and easy and supports both Ionic 1 and Ionic 2. Make sure that you started the application at least one time (as described above), to be sure that the application is working on your computer. Following steps will automatically instrument the Ionic application:
+The instrumention script is fast and easy and supports both Ionic 1 and Ionic 2 (Currently not the Electron application). Make sure that you started the application at least one time (as described above), to be sure that the application is working on your computer. Following steps will automatically instrument the Ionic application:
 
 * Execute the command *npm install dynatrace-ionic-instrumentation* in your project folder.
 * The *instrument.properties* file will now appear in your root project folder after the installation of the instrumentation tool has finished.

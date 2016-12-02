@@ -35,7 +35,6 @@
     "@ionic/app-scripts": "^0.0.36",
     "@types/node": "^6.0.51",
     "@types/x2js": "0.0.27",
-    "dynatrace-ionic-instrumentation": "0.0.2",
     "electron": "^1.4.10",
     "electron-packager": "^8.3.0",
     "grunt": "^1.0.1",
