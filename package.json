@@ -42,7 +42,7 @@
     "grunt-contrib-copy": "^1.0.0",
     "grunt-shell-spawn": "^0.3.10",
     "load-grunt-config": "^0.19.2",
-    "typescript": "^2.0.3"
+    "typescript": "2.0.3"
   },
   "description": "EasyTravel: A dynatrace sample ionic project",
   "cordovaPlugins": [
