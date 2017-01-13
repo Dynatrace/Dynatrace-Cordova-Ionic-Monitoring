@@ -1,6 +1,6 @@
 {
   "serve-app": [
-    "shell:build",
+    "shell:buildBrowser",
     "copy:electron",
     "shell:proxy",
     "shell:run",
@@ -12,14 +12,14 @@
     "shell:proxy:kill"
   ],
   "serve-web": [
-    "shell:build",
+    "shell:buildBrowser",
     "copy:web",
     "shell:proxy",
     "connect",
     "shell:proxy:kill"
   ],
   "build-app": [
-    "shell:build",
+    "shell:buildBrowser",
     "copy:electron",
     "shell:install",
     "shell:package"

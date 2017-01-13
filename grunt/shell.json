@@ -8,9 +8,6 @@
   "lab": {
     "command": "ionic serve --lab"
   },
-  "build": {
-    "command": "ionic build"
-  },
   "buildBrowser": {
     "command": "ionic build browser"
   },
