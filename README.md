@@ -59,12 +59,13 @@ The instrumention script is fast and easy and supports both Ionic 1 and Ionic 2 
 * Execute the command *npm install dynatrace-ionic-instrumentation* in your project folder.
 * The *instrument.properties* file will now appear in your root project folder after the installation of the instrumentation tool has finished.
 * Fill in the configuration in the *instrument.properties* with the information of your own dynatrace environment.
+* Add different source directories in the *instrument.properties* if you have other similar frameworks like electron.
 
 The property file (instrument.properties) looks like this:
 
 ```
 ## Instrumentation Properties - Please define in order to download the JS Agent ##
-SOURCE_DIRECTORY = "src"
+SOURCE_DIRECTORY = ["src"]
 
 # General Settings - 'DYNATRACE SAAS' 'DYNATRACE MANAGED' OR 'DYNATRACE APPMON'
 TYPE = "DYNATRACE SAAS"
@@ -88,7 +89,7 @@ API_PASSWORD = "admin"
 
 This is the download and default version of the properties. Following points have to be configured:
 
-* SOURCE_DIRECTORY: The source directory at the beginning is the source directoy of your Ionic project. For most Ionic 2 projects this directory is called *"src"*. In Ionic 1 this directory can also be called *"www"*. 
+* SOURCE_DIRECTORY: The source directory at the beginning is the source directoy of your Ionic project. For most Ionic 2 projects this directory is called *"src"*. In Ionic 1 this directory can also be called *"www"*. As you already noticed this value is an array. So you can add several folders and all of them get instrumented. This is especially important if you have got different index.html file because of different frameworks.
 * TYPE: Dynatrace Saas is configured as default type. Other type options might be Dynatrace Managed or Dynatrace AppMon. 
 * AGENT_LOCATION: You can choose wether you want to download the whole agent (OFFLINE) and include the agent in the build or if you want to add only a tag (ONLINE) in the HTML which is downloading the agent on the fly (when the application is starting). 
 * Beneath the other options you can find the API configuration for Dynatrace Saas/Managed and Dynatrace AppMon. Depending on which TYPE you use, make sure that you fill in the configuration. 
