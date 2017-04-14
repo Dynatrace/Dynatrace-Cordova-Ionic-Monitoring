@@ -52,7 +52,13 @@ It's cleaner, however, to use a CORS proxy. To start the proxy manually, execute
 
 Now you can navigate to the *Settings* page and enter "localhost" in the *Proxy Host* field, as well as the port number used by the CORS proxy (displayed in the command line window) in the *Proxy Port* field.
 
-## Instrumentation
+## Instrumentation (Deprecated)
+
+**Please be aware that there is a new Cordova Plugin for AppMon and Dynatrace: https://github.com/Dynatrace/Dynatrace-Cordova-Plugin**
+
+The NPM package is not supported anymore because the Cordova Plugin is not only supporting the JavaScript Agent, but also the Mobile Agent and the JavaScript Bridge.
+
+------------------
 
 The instrumention script is fast and easy and supports both Ionic 1 and Ionic 2 (Currently not the Electron application). Make sure that you started the application at least one time (as described above), to be sure that the application is working on your computer. Following steps will automatically instrument the Ionic application:
 
