@@ -80,17 +80,17 @@ TYPE = "DYNATRACE SAAS"
 AGENT_LOCATION = "OFFLINE"
 
 # DYNATRACE SaaS/Managed API Access 
-ENVIRONMENT_ID = "fdq95078" 
-CLUSTER_URL = "fdq95078.dev.dynatracelabs.com"
-APPLICATION_ID = "203B8CC2009EE62F"
-API_TOKEN = "H0yp6L_QSFyi3iaphSBJX"
+ENVIRONMENT_ID = ".." 
+CLUSTER_URL = ".."
+APPLICATION_ID = ".."
+API_TOKEN = ".."
 
 # APPMON API Access
 APPMON_URL = ""
-APPLICATION_NAME = "easyTravel portal"
-PROFILE = "easyTravel"
-API_USER = "admin"
-API_PASSWORD = "admin"
+APPLICATION_NAME = ".."
+PROFILE = ".."
+API_USER = ".."
+API_PASSWORD = ".."
 ```
 
 This is the download and default version of the properties. Following points have to be configured:
