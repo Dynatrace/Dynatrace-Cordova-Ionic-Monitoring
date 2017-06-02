@@ -22,7 +22,6 @@ Now you are ready for the installation of the application.
 
 1. Checkout or download the project content
 2. Installation of all necessary project modules: In the project directory execute the command `npm install`
-3. Build the project for the first time. Use the command *ionic build*. This has to be done because of an Ionic Bug. If you want to add a platform without building the application at least once, the process will fail with the message *"Error: Current working directory is not a Cordova-based project."*.
 3. Add a desktop platform: Enter the command `ionic platform add browser`
 4. **Not necessary**: Add a mobile platform (e.g. Android) - Enter the command `ionic platform add Android`
 
