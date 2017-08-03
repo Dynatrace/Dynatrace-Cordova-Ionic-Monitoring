@@ -1,5 +1,7 @@
-import { NgModule } from '@angular/core';
-import { IonicApp, IonicModule } from 'ionic-angular';
+import { NgModule, ErrorHandler } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
+import { HttpModule, Http } from '@angular/http';
 
 import { RESTService } from '../services/restService';
 import { LoadingDialogService } from '../services/loadingDialogService';
@@ -34,6 +36,8 @@ import { MomentModule } from 'angular2-moment';
 	CurrencyPipe
   ],
   imports: [
+	BrowserModule,
+	HttpModule,
     IonicModule.forRoot(EasyTravel), MomentModule
   ],
   bootstrap: [IonicApp],
@@ -51,4 +55,6 @@ import { MomentModule } from 'angular2-moment';
   providers: [RESTService, LoadingDialogService, Storage]
 })
 
-export class AppModule {}
+export class AppModule {
+
+}
