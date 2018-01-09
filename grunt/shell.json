@@ -9,7 +9,7 @@
     "command": "ionic serve --lab"
   },
   "buildBrowser": {
-    "command": "ionic build browser"
+    "command": "ionic cordova build browser"
   },
   "run": {
     "command": "<%= bin %>electron \"<%= appDist %>\""

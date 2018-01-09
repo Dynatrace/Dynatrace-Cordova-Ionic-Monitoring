@@ -2,6 +2,9 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { HttpModule, Http } from '@angular/http';
+import { StatusBar } from '@ionic-native/status-bar';
+import { DatePicker } from '@ionic-native/date-picker';
+import { MomentModule } from 'angular2-moment';
 
 import { RESTService } from '../services/restService';
 import { LoadingDialogService } from '../services/loadingDialogService';
@@ -16,11 +19,8 @@ import { SettingsPage } from '../pages/settings/settings';
 import { WebPage } from '../pages/web/web';
 import { SpecialPage } from '../pages/special/special';
 
-import { Storage } from '@ionic/storage';
+import { IonicStorageModule } from '@ionic/storage';
 import { CurrencyPipe } from '../pipes/currencyPipe';
-
-
-import { MomentModule } from 'angular2-moment';
 
 @NgModule({
   declarations: [
@@ -38,7 +38,9 @@ import { MomentModule } from 'angular2-moment';
   imports: [
 	BrowserModule,
 	HttpModule,
-    IonicModule.forRoot(EasyTravel), MomentModule
+	MomentModule,
+    IonicModule.forRoot(EasyTravel),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -52,7 +54,12 @@ import { MomentModule } from 'angular2-moment';
 	WebPage,
 	SpecialPage
   ],
-  providers: [RESTService, LoadingDialogService, Storage]
+  providers: [
+    RESTService, 
+    LoadingDialogService,
+    StatusBar,
+	DatePicker
+  ]
 })
 
 export class AppModule {

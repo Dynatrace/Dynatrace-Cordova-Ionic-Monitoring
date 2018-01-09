@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Content, AlertController, NavController, Platform } from 'ionic-angular';
 import { RESTService } from '../../services/restService';
-import { DatePicker } from 'ionic-native';
+import { DatePicker } from '@ionic-native/date-picker';
 import { ResultsPage } from '../results/results';
 import { Config } from '../../services/config';
 import { LoadingDialogService } from '../../services/loadingDialogService';
@@ -23,7 +23,6 @@ export class SearchPage {
 	// For Non-Native
 	@ViewChild('dateFromPicker') dateFromPicker;
 	@ViewChild('dateToPicker') dateToPicker;
-
 	@ViewChild('destinationInput') destinationInput;
 
 	destinations : string[];
@@ -42,7 +41,7 @@ export class SearchPage {
 
 	config: Config;
 
-	constructor(private restService: RESTService, private dialog: LoadingDialogService, private alertCtrl: AlertController, private navCtrl: NavController, private platform: Platform){
+	constructor(private restService: RESTService, private dialog: LoadingDialogService, private alertCtrl: AlertController, private navCtrl: NavController, private platform: Platform, private datePicker: DatePicker){
 		this.config = Config.getInstance();
 
 		this.fromDateRaw = new Date();
@@ -162,7 +161,7 @@ export class SearchPage {
 				androidTheme: 3
 			}
 
-			DatePicker.show(options).then(
+			this.datePicker.show(options).then(
 				date => {
 					this.fromDateRaw = date;
 					this.fromDate = date.toISOString();;
@@ -187,7 +186,7 @@ export class SearchPage {
 				androidTheme: 3
 			}
 
-			DatePicker.show(options).then(
+			this.datePicker.show(options).then(
 				date => {
 					this.toDateRaw = date;
 					this.toDate = date.toISOString();;

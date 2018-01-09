@@ -24,8 +24,8 @@ export class Config{
 
 	private hostUrl: string;
 	private hostPort: number;
-  private proxyUrl: string;
-  private proxyPort: number;
+	  private proxyUrl: string;
+	  private proxyPort: number;
 
 	private crashLogin: boolean;
 	private errorBooking: boolean;
