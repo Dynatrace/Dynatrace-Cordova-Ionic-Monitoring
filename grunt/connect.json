@@ -1,9 +1,0 @@
-{
-  "browser": {
-    "options": {
-      "base": "<%= build %>",
-      "open": true,
-      "keepalive": true
-    }
-  }
-}
