@@ -22,8 +22,8 @@ Now you are ready for the installation of the application.
 
 1. Checkout or download the project content
 2. Installation of all necessary project modules: In the project directory execute the command `npm install`
-3. Add a desktop platform: Enter the command `ionic platform add browser`
-4. **Not necessary**: Add a mobile platform (e.g. Android) - Enter the command `ionic platform add Android`
+3. Add a desktop platform: Enter the command `ionic cordova platform add browser`
+4. **Not necessary**: Add a mobile platform (e.g. Android) - Enter the command `ionic cordova platform add android`
 
 **Important:** Especially when adding a platform be sure that you install all necessary platform tools. See https://ionicframework.com/docs/v2/getting-started/installation/ for more information. The Android platform requirements can be found here: http://cordova.apache.org/docs/en/latest/guide/platforms/android/index.html. The iOS platform requirements can be found here: http://cordova.apache.org/docs/en/latest/guide/platforms/ios/index.html
 
@@ -31,11 +31,11 @@ Now you are ready for the installation of the application.
 
 Depending on the platforms added, the startup looks different. If you want to run `ionic serve --lab`, please read the section *CORS Problems*.
 
-If you want to run the application on iOS or Android simply enter `ionic run android` or `ionic run ios`. This, of course, only works when the platform was added in the installation step.
+If you want to run the application on iOS or Android simply enter `ionic cordova run android` or `ionic cordova run ios`. This, of course, only works when the platform was added in the installation step.
 
 ### Build
 
-To build the iOS & Android apps, execute `ionic build ios` or `ionic build android`, respectively. Again, this only works when the platform was added in the installation step.
+To build the iOS & Android apps, execute `ionic cordova build ios` or `ionic cordova build android`, respectively. Again, this only works when the platform was added in the installation step.
 
 ### CORS Problems
 
