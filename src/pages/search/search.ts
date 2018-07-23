@@ -47,6 +47,7 @@ export class SearchPage {
 		this.fromDateRaw = new Date();
 		this.fromDate = this.fromDateRaw.toISOString();
 		this.toDateRaw = new Date();
+    this.toDateRaw.setFullYear(this.toDateRaw.getFullYear() + 1);
 		this.toDate = this.toDateRaw.toISOString();
 
 		this.infoIcon = DEFAULT_INFO_NO_RESULT_ICON;
