@@ -79,5 +79,9 @@ export class EasyTravel {
 		this.nav.setRoot(page.component);
 	}
   }
+  
+  mainMenuOpen() {
+	  // nothing to do here
+	} 
  
 }
