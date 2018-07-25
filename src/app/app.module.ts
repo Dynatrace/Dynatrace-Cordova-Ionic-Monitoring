@@ -22,6 +22,12 @@ import { SpecialPage } from '../pages/special/special';
 import { IonicStorageModule } from '@ionic/storage';
 import { CurrencyPipe } from '../pipes/currencyPipe';
 
+class MyErrorHandler implements ErrorHandler {
+  handleError(err: any): void {
+		// do nothing
+  }
+}
+
 @NgModule({
   declarations: [
     EasyTravel,
@@ -57,8 +63,9 @@ import { CurrencyPipe } from '../pipes/currencyPipe';
   providers: [
     RESTService, 
     LoadingDialogService,
-    StatusBar,
-	DatePicker
+		StatusBar,
+		DatePicker,
+		{ provide: ErrorHandler, useClass: MyErrorHandler }
   ]
 })
 
