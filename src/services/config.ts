@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Storage } from '@ionic/storage';
+import { ConfigEasyTravel } from './configEasyTravel'
 
-const DEFAULT_HOST_URL: string = "dynasprint.emea.cpwr.corp";
-const DEFAULT_HOST_PORT: number = 8079;
 const DEFAULT_PROXY_URL: string = "localhost";
 const DEFAULT_PROXY_PORT: number = 0;
 
@@ -24,8 +23,8 @@ export class Config{
 
 	private hostUrl: string;
 	private hostPort: number;
-	  private proxyUrl: string;
-	  private proxyPort: number;
+	private proxyUrl: string;
+	private proxyPort: number;
 
 	private crashLogin: boolean;
 	private errorBooking: boolean;
@@ -119,10 +118,10 @@ export class Config{
 
 	public setDefault(){
 		if (Config.instance != null){
-			Config.instance.setHostUrl(DEFAULT_HOST_URL);
-      Config.instance.setProxyUrl(DEFAULT_PROXY_URL);
-      Config.instance.setProxyPort(DEFAULT_PROXY_PORT);
-			Config.instance.setHostPort(DEFAULT_HOST_PORT);
+			Config.instance.setHostUrl(ConfigEasyTravel.DEFAULT_HOST_URL);
+      		Config.instance.setProxyUrl(DEFAULT_PROXY_URL);
+      		Config.instance.setProxyPort(DEFAULT_PROXY_PORT);
+			Config.instance.setHostPort(ConfigEasyTravel.DEFAULT_HOST_PORT);
 			Config.instance.setErrorBooking(DEFAULT_ERROR_BOOKING);
 			Config.instance.setEasyTravelUnreachable(DEFAULT_UNREACHABLE);
 			Config.instance.setCrashLogin(DEFAULT_CRASH_LOGIN);
